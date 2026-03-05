@@ -6,7 +6,7 @@ pipeline {
         stage('Checkout from GitHub') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/vaishnavichevva/node-docker-app.git'
+                    url: 'https://github.com/vaishnavichevva/docker-node-app.git'
             }
         }
 
@@ -33,7 +33,7 @@ pipeline {
         
         stage('Create container') {
             steps {
-                sh 'docker run -d -p 3000:8080 vaishnavichevva/node-docker-app:${BUILD_NUMBER}'
+                sh 'docker run -d -p 3000:8080 vaishnavichevva/docker-node-app:${BUILD_NUMBER}'
             }
         }
 
